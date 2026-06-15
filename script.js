@@ -29,7 +29,7 @@ function validateAndSend() {
 
 async function sendEmailToServer(name, email, message) {
   const submitButton = document.querySelector(
-    'button[onclick="validateAndSend()"]'
+    'button[onclick="validateAndSend()"]',
   );
   const originalText = submitButton.innerHTML;
 
@@ -50,9 +50,19 @@ async function sendEmailToServer(name, email, message) {
       body: formData,
     });
 
-    const result = await response.json();
+    const contentType = response.headers.get("content-type") || "";
+    let result;
 
-    if (result.success) {
+    if (contentType.includes("application/json")) {
+      result = await response.json();
+    } else {
+      const responseText = await response.text();
+      throw new Error(
+        `Réponse inattendue du serveur (${response.status}): ${responseText.slice(0, 200)}`,
+      );
+    }
+
+    if (response.ok && result.success) {
       // Succès : afficher la popup de confirmation
       popupSend();
       // Réinitialiser le formulaire
@@ -64,7 +74,9 @@ async function sendEmailToServer(name, email, message) {
     }
   } catch (error) {
     console.error("Erreur:", error);
-    showError("Erreur de connexion au serveur. Veuillez réessayer.");
+    showError(
+      error.message || "Erreur de connexion au serveur. Veuillez réessayer.",
+    );
   } finally {
     // Réactiver le bouton
     submitButton.disabled = false;
