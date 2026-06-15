@@ -9,6 +9,29 @@
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
+.project-card{
+    padding: 8px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.project-card:hover{
+    transform: translateY(-6px);
+    background-color: #f1f5f9;
+    border-color: #e7eff3;
+    box-shadow: 0 12px 24px rgba(13, 23, 27, 0.12);
+}
+.project-card .project-title,
+.project-card .project-desc{
+    transition: color 0.3s ease-in-out;
+}
+.project-card:hover .project-title{
+    color: #13a4ec;
+}
+.project-card:hover .project-desc{
+    color: #0d171b;
+}
 .contact-icon:hover{
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;

@@ -18,7 +18,7 @@
 
   </head>
   <body class="h-screen flex flex-col">
-    <div class="relative flex h-screen w-full flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+    <div class="relative flex h-screen w-full flex-col bg-slate-50 group/design-root overflow-x-hidden" style="font-family: &quot;Space Grotesk&quot;, &quot;Noto Sans&quot;, sans-serif;">
       <div class="layout-container flex h-full grow flex-col">
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7eff3] px-10 py-3">
           <div class="flex items-center gap-4 text-[#0d171b]">
@@ -34,7 +34,7 @@
               <a class="text-[#0d171b] text-sm font-medium leading-normal" href="#contact">Contact</a>
             </div>
             <div class="flex gap-2">
-              <a href="https://github.com/Coco-Lapin"
+              <a href="https://github.com/cvandeput"
                 class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#e7eff3] text-[#0d171b] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 skill-badge">
                 <div class="text-[#0d171b]" data-icon="GithubLogo" data-size="20px" data-weight="regular">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
@@ -73,12 +73,12 @@
               </div>
             </div>
             <form class="space-y-2" id="contactForm" novalidate>
-              <div class="valid-name max-w-[448px] hidden flex flex-col bg-[#db2019]/25 rounded-lg border-2 border-[#db2019] justify-center overflow-hidden p-4 m-4">
+              <div class="valid-name max-w-[448px] hidden flex-col bg-[#db2019]/25 rounded-lg border-2 border-[#db2019] justify-center overflow-hidden p-4 m-4">
                 <p class="text-[#db2019] text-sm font-normal leading-normal">Please enter a valid name (at least 2 characters)</p>
               </div>
               <div class="flex flex-wrap items-end gap-2 px-2 py-1">
                 <label class="flex flex-col min-w-40 flex-1">
-                  <p class="text-[#0d171b] text-sm font-medium leading-normal pb-1">Your Name</p>
+                  <span class="text-[#0d171b] text-sm font-medium leading-normal pb-1">Your Name</span>
                   <input
                     name="name"
                     type="text"
@@ -90,12 +90,12 @@
                   />
                 </label>
               </div>
+              <div class="valid-Mail max-w-[448px] hidden flex-col bg-[#db2019]/25 rounded-lg border-2 border-[#db2019] justify-center overflow-hidden p-4 m-4">
+                <p class="text-[#db2019] text-sm font-normal leading-normal">Please enter a valid email address</p>
+              </div>
               <div class="flex flex-wrap items-end gap-2 px-2 py-1">
                 <label class="flex flex-col min-w-40 flex-1">
-                  <div class="valid-Mail max-w-[448px] hidden flex flex-col bg-[#db2019]/25 rounded-lg border-2 border-[#db2019] justify-center overflow-hidden p-4 m-4">
-                    <p class="text-[#db2019] text-sm font-normal leading-normal">Please enter a valid email address</p>
-                  </div>
-                  <p class="text-[#0d171b] text-sm font-medium leading-normal pb-1">Email</p>
+                  <span class="text-[#0d171b] text-sm font-medium leading-normal pb-1">Email</span>
                   <input
                     name="email"
                     type="email"
@@ -106,12 +106,12 @@
                   />
                 </label>
               </div>
+              <div class="valid-Message max-w-[448px] hidden flex-col bg-[#db2019]/25 rounded-lg border-2 border-[#db2019] justify-center overflow-hidden p-4 m-4">
+                <p class="text-[#db2019] text-sm font-normal leading-normal">Please enter a message that contain between 10 and 500 characters</p>
+              </div>
               <div class="flex flex-wrap items-end gap-2 px-2 py-1">
                 <label class="flex flex-col min-w-40 flex-1">
-                  <div class="valid-Message max-w-[448px] hidden flex flex-col bg-[#db2019]/25 rounded-lg border-2 border-[#db2019] justify-center overflow-hidden p-4 m-4">
-                    <p class="text-[#db2019] text-sm font-normal leading-normal">Please enter a message that contain between 10 and 500 characters</p>
-                  </div>
-                  <p class="text-[#0d171b] text-sm font-medium leading-normal pb-1">Message <span class="text-xs text-[#4c809a]">(<span id="charCount">0</span>/500)</span></p>
+                  <span class="text-[#0d171b] text-sm font-medium leading-normal pb-1">Message <span class="text-xs text-[#4c809a]">(<span id="charCount">0</span>/500)</span></span>
                   <textarea
                     name="message"
                     placeholder="How can I help you?"
@@ -126,7 +126,7 @@
               </div>
               <div class="flex px-2 py-1 justify-end">
                 <button type="button" onclick="validateAndSend()"
-                  class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-3 bg-[#13a4ec] text-slate-50 text-xs font-bold leading-normal tracking-[0.015em] contact-icon" >
+                  class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-3 bg-[#13a4ec] text-slate-50 text-xs font-bold leading-normal tracking-[0.015em] contact-icon">
                   <span class="truncate">Send Message</span>
                 </button>
               </div>
