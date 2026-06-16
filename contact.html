@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth md:scroll-auto">
+<html lang="en" class="scroll-smooth md:scroll-auto">
   <head>
+    <meta charset="utf-8" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
@@ -10,11 +11,13 @@
     />
 
     <title>Developer Portfolio - Contact</title>
-    <link rel="icon" type="image/x-icon" href="logo.png" />
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="./script.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="src/script.js"></script>
+    <script src="assets/i18n/translations.js" defer></script>
+    <script src="src/i18n.js" defer></script>
 
   </head>
   <body class="h-screen flex flex-col">
@@ -23,17 +26,18 @@
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7eff3] px-10 py-3">
           <div class="flex items-center gap-4 text-[#0d171b]">
             <div class="size-12">
-              <img src="logo.svg" alt="logo image" class="h-100 w-100">
+              <img src="assets/img/logo.svg" alt="logo image" class="h-100 w-100">
             </div>
             <h2 class="text-[#0d171b] text-lg font-bold leading-tight tracking-[-0.015em]">Corentin Vandeput</h2>
           </div>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="index.html">About</a>
-              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="index.html">Projects</a>
-              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="#contact">Contact</a>
+              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="index.html" data-i18n="nav.about">About</a>
+              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="projects.html" data-i18n="nav.projects">Projects</a>
+              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="#contact" data-i18n="nav.contact">Contact</a>
             </div>
             <div class="flex gap-2">
+              <button id="langToggle" type="button" aria-label="Change language" class="flex h-10 min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-[#e7eff3] px-3 text-sm font-bold tracking-[0.015em] text-[#0d171b] skill-badge">FR</button>
               <a href="https://github.com/cvandeput"
                 class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#e7eff3] text-[#0d171b] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 skill-badge">
                 <div class="text-[#0d171b]" data-icon="GithubLogo" data-size="20px" data-weight="regular">
@@ -60,29 +64,29 @@
         </header>
         <div class="px-10 flex-col flex-1 justify-center py-1 m-auto overflow-y-auto">
           <div class="message-send max-w-[448px] hidden flex flex-col bg-[#29b717]/25 rounded-lg border-2 border-[#29b717] justify-center overflow-hidden p-4 m-4">
-            <p class="text-[#29b717] text-sm font-normal leading-normal">Message sent successfully</p>
-            <p class="text-[#29b717] text-sm font-normal leading-normal">The owner of the page will text you soon</p>
+            <p class="text-[#29b717] text-sm font-normal leading-normal" data-i18n="msg.success1">Message sent successfully</p>
+            <p class="text-[#29b717] text-sm font-normal leading-normal" data-i18n="msg.success2">The owner of the page will get back to you soon</p>
           </div>
           <div class="layout-content-container flex flex-col max-w-[512px] py-2">
             <div class="flex flex-wrap justify-between gap-2 py-5 px-2">
               <div class="flex min-w-72 flex-col gap-2">
-                <p class="text-[#0d171b] tracking-light text-[28px] font-bold leading-tight" id="contact">Contact Me</p>
+                <p class="text-[#0d171b] tracking-light text-[28px] font-bold leading-tight" id="contact" data-i18n="contactp.title">Contact Me</p>
                 <p class="text-[#4c809a] text-xs font-normal leading-normal">
-                  I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!
+                  <span data-i18n="contactp.intro">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!</span>
                 </p>
               </div>
             </div>
             <form class="space-y-2" id="contactForm" novalidate>
               <div class="valid-name max-w-[448px] hidden flex-col bg-[#db2019]/25 rounded-lg border-2 border-[#db2019] justify-center overflow-hidden p-4 m-4">
-                <p class="text-[#db2019] text-sm font-normal leading-normal">Please enter a valid name (at least 2 characters)</p>
+                <p class="text-[#db2019] text-sm font-normal leading-normal" data-i18n="val.name">Please enter a valid name (at least 2 characters)</p>
               </div>
               <div class="flex flex-wrap items-end gap-2 px-2 py-1">
                 <label class="flex flex-col min-w-40 flex-1">
-                  <span class="text-[#0d171b] text-sm font-medium leading-normal pb-1">Your Name</span>
+                  <span class="text-[#0d171b] text-sm font-medium leading-normal pb-1" data-i18n="form.name_label">Your Name</span>
                   <input
                     name="name"
                     type="text"
-                    placeholder="Enter your name"
+                    placeholder="Enter your name" data-i18n-placeholder="form.name_ph"
                     class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d171b] focus:outline-0 focus:ring-0 border-none bg-[#e7eff3] focus:border-none h-10 placeholder:text-[#4c809a] px-2 py-4 text-xs font-normal leading-normal"
                     autocomplete="name"
                     required
@@ -91,15 +95,15 @@
                 </label>
               </div>
               <div class="valid-Mail max-w-[448px] hidden flex-col bg-[#db2019]/25 rounded-lg border-2 border-[#db2019] justify-center overflow-hidden p-4 m-4">
-                <p class="text-[#db2019] text-sm font-normal leading-normal">Please enter a valid email address</p>
+                <p class="text-[#db2019] text-sm font-normal leading-normal" data-i18n="val.email">Please enter a valid email address</p>
               </div>
               <div class="flex flex-wrap items-end gap-2 px-2 py-1">
                 <label class="flex flex-col min-w-40 flex-1">
-                  <span class="text-[#0d171b] text-sm font-medium leading-normal pb-1">Email</span>
+                  <span class="text-[#0d171b] text-sm font-medium leading-normal pb-1" data-i18n="form.email_label">Email</span>
                   <input
                     name="email"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Enter your email" data-i18n-placeholder="form.email_ph"
                     class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d171b] focus:outline-0 focus:ring-0 border-none bg-[#e7eff3] focus:border-none h-10 placeholder:text-[#4c809a] px-2 py-4 text-xs font-normal leading-normal"
                     autocomplete="email"
                     required
@@ -107,14 +111,14 @@
                 </label>
               </div>
               <div class="valid-Message max-w-[448px] hidden flex-col bg-[#db2019]/25 rounded-lg border-2 border-[#db2019] justify-center overflow-hidden p-4 m-4">
-                <p class="text-[#db2019] text-sm font-normal leading-normal">Please enter a message that contain between 10 and 500 characters</p>
+                <p class="text-[#db2019] text-sm font-normal leading-normal" data-i18n="val.message">Please enter a message that contains between 10 and 500 characters</p>
               </div>
               <div class="flex flex-wrap items-end gap-2 px-2 py-1">
                 <label class="flex flex-col min-w-40 flex-1">
-                  <span class="text-[#0d171b] text-sm font-medium leading-normal pb-1">Message <span class="text-xs text-[#4c809a]">(<span id="charCount">0</span>/500)</span></span>
+                  <span class="text-[#0d171b] text-sm font-medium leading-normal pb-1"><span data-i18n="form.message_label">Message</span> <span class="text-xs text-[#4c809a]">(<span id="charCount">0</span>/500)</span></span>
                   <textarea
                     name="message"
-                    placeholder="How can I help you?"
+                    placeholder="How can I help you?" data-i18n-placeholder="form.msg_ph"
                     class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d171b] focus:outline-0 focus:ring-0 border-none bg-[#e7eff3] focus:border-none h-16 placeholder:text-[#4c809a] px-2 pb-12 text-xs font-normal leading-normal"
                     maxlength="500"
                     required
@@ -127,7 +131,7 @@
               <div class="flex px-2 py-1 justify-end">
                 <button type="button" onclick="validateAndSend()"
                   class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-3 bg-[#13a4ec] text-slate-50 text-xs font-bold leading-normal tracking-[0.015em] contact-icon">
-                  <span class="truncate">Send Message</span>
+                  <span class="truncate" data-i18n="form.send">Send Message</span>
                 </button>
               </div>
             </form>
