@@ -88,16 +88,22 @@ $emailBody = "
 </html>
 ";
 
+// Adresse expéditrice alignée au domaine (SPF) — ne pas mettre l'email du visiteur ici
+$fromAddress = 'noreply@devworks.be';
+
+// Sujet encodé UTF-8 (RFC 2047) pour les accents
+$encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+
 // En-têtes pour l'email
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
-$headers .= "From: noreply@devworks.be" . "\r\n";
-$headers .= "Reply-To: " . $email . "\r\n";
+$headers .= "From: Contact devworks.be <" . $fromAddress . ">" . "\r\n";
+$headers .= "Reply-To: " . htmlspecialchars($name, ENT_QUOTES) . " <" . $email . ">" . "\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
-// Tentative d'envoi de l'email
+// Le 5e paramètre (-f) fixe l'enveloppe d'expédition : indispensable pour passer SPF
 try {
-    if (mail($to, $subject, $emailBody, $headers)) {
+    if (mail($to, $encodedSubject, $emailBody, $headers, '-f' . $fromAddress)) {
         // Succès
         echo json_encode([
             'success' => true,

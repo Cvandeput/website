@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth md:scroll-auto">
+<html lang="en" class="scroll-smooth md:scroll-auto">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
@@ -9,12 +11,13 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
 
-    <title>Developer Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="logo.png" />
+    <title>Corentin Vandeput - Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/i18n/translations.js" defer></script>
+    <script src="src/i18n.js" defer></script>
   </head>
   <body>
     <div class="relative flex h-auto min-h-screen w-full flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
@@ -22,17 +25,18 @@
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7eff3] px-10 py-3">
           <div class="flex items-center gap-4 text-[#0d171b]">
             <div class="size-12">
-              <img src="logo.svg" alt="logo image" class="h-100 w-100">
+              <img src="assets/img/logo.svg" alt="logo" class="h-full w-full object-contain">
             </div>
             <h2 class="text-[#0d171b] text-lg font-bold leading-tight tracking-[-0.015em]">Corentin Vandeput</h2>
           </div>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="#about">About</a>
-              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="#projects">Projects</a>
-              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="contact.html">Contact</a>
+              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="#about" data-i18n="nav.about">About</a>
+              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="projects.html" data-i18n="nav.projects">Projects</a>
+              <a class="text-[#0d171b] text-sm font-medium leading-normal" href="contact.html" data-i18n="nav.contact">Contact</a>
             </div>
             <div class="flex gap-2">
+              <button id="langToggle" type="button" aria-label="Change language" class="flex h-10 min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-[#e7eff3] px-3 text-sm font-bold tracking-[0.015em] text-[#0d171b] skill-badge">FR</button>
               <a href="https://github.com/cvandeput"
                 class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#e7eff3] text-[#0d171b] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 skill-badge">
                 <div class="text-[#0d171b]" data-icon="GithubLogo" data-size="20px" data-weight="regular">
@@ -54,7 +58,7 @@
             </div>
           </div>
         </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="px-4 md:px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="@container">
               <div class="@[480px]:p-4">
@@ -68,150 +72,88 @@
                     >
                       Corentin Vandeput
                     </h1>
-                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">IT Student | Belgium</h2>
+                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal" data-i18n="home.hero.role">IT Student | Belgium</h2>
                   </div>
-                  <a href="https://www.devwork.cloud"
+                  <a href="projects.html"
                     class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#13a4ec] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
                   >
-                    <span class="truncate" id="programming-language">View Projects</span>
+                    <span class="truncate" data-i18n="hero.cta_projects">View Projects</span>
                   </a>
                 </div>
               </div>
             </div>
 
-            <!-- programming languages sections -->
-            <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Me</h2>
-            <p class="text-[#0d171b] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              I'm a passionate IT student from Belgium, currently pursuing my studies in Computer Science. I have a strong interest in web development, software engineering, and
-              emerging technologies. I'm always eager to learn and explore new challenges in the tech world.
+            <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-i18n="home.about.title">About Me</h2>
+            <p class="text-[#0d171b] text-base font-normal leading-normal pb-3 pt-1 px-4" data-i18n="home.about.body">
+              I'm a passionate IT student from Belgium, currently pursuing my studies in Computer Science. I have a strong interest in web development, software engineering, and emerging technologies. I'm always eager to learn and explore new challenges in the tech world.
             </p>
-            <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Skills</h2>
+            <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-i18n="skills.heading">Skills</h2>
             <div class="flex gap-3 p-3 flex-wrap pr-4">
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">Python</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">Java</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">JavaScript</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">HTML / CSS</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">SQL</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">Git</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">XML</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">XSL</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">TailWind</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">C</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">C++ (base)</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">JSON</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">TIA Portal (Siemens 1214/1215)</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">DuckyScript (base)</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">TypeScript - incoming</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">React - incoming</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">JSX - incoming</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">C# - incoming</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge">
-                <p class="text-[#0d171b] text-sm font-medium leading-normal">Soft-Confort - incoming</p>
-              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">Python</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">Java</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">JavaScript</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">HTML / CSS</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">SQL</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">Git</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">XML</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">XSL</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">TailWind</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">C</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">C++ (base)</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">JSON</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">TIA Portal (Siemens 1214/1215)</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">DuckyScript (base)</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal" data-i18n="skills.ts">TypeScript - incoming</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal" data-i18n="skills.react">React - incoming</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal" data-i18n="skills.jsx">JSX - incoming</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal" data-i18n="skills.csharp">C# - incoming</p></div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7eff3] pl-4 pr-4 skill-badge"><p class="text-[#0d171b] text-sm font-medium leading-normal">Soft-Confort - incoming</p></div>
             </div>
 
-            <!-- Projects Section -->
-            <h2 id="projects" class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Projects</h2>
+            <h2 id="projects" class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-i18n="home.projects.title">Projects</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-3 p-4">
-              <div class="flex flex-col gap-3 pb-3 project-card">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg image-project"
-                  style='background-image: url("https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=80");'
-                ></div>
+              <a href="projects.html" class="flex flex-col gap-3 pb-3 project-card">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg image-project" style='background-image: url("https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=80");'></div>
                 <div>
-                  <p class="text-[#0d171b] text-base font-medium leading-normal project-title">Personal Portfolio Website</p>
-                  <p class="text-[#4c809a] text-sm font-normal leading-normal project-desc">Site personnel présentant mes compétences et mes projets. Code disponible sur GitHub.</p>
+                  <p class="text-[#0d171b] text-base font-medium leading-normal project-title" data-i18n="home.proj.portfolio.t">Personal Portfolio Website</p>
+                  <p class="text-[#4c809a] text-sm font-normal leading-normal project-desc" data-i18n="home.proj.portfolio.d">Personal site showcasing my skills and projects. Code available on GitHub.</p>
                 </div>
-              </div>
-
-              <div class="flex flex-col gap-3 pb-3 project-card">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg image-project"
-                  style='background-image: url("https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=1200&q=80");'
-                ></div>
+              </a>
+              <a href="projects.html" class="flex flex-col gap-3 pb-3 project-card">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg image-project" style='background-image: url("https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=1200&q=80");'></div>
                 <div>
-                  <p class="text-[#0d171b] text-base font-medium leading-normal project-title">Souris pour environnement 3D</p>
-                  <p class="text-[#4c809a] text-sm font-normal leading-normal project-desc">Périphérique de pointage conçu pour la navigation et la manipulation dans des environnements 3D.</p>
+                  <p class="text-[#0d171b] text-base font-medium leading-normal project-title" data-i18n="home.proj.spacemouse.t">3D-environment mouse</p>
+                  <p class="text-[#4c809a] text-sm font-normal leading-normal project-desc" data-i18n="home.proj.spacemouse.d">Pointing device designed for navigation and manipulation in 3D environments.</p>
                 </div>
-              </div>
-
-              <div class="flex flex-col gap-3 pb-3 project-card">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg image-project"
-                  style='background-image: url("https://images.unsplash.com/photo-1547949003-9792a18a2601?auto=format&fit=crop&w=1200&q=80");'
-                ></div>
+              </a>
+              <a href="projects.html" class="flex flex-col gap-3 pb-3 project-card">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg image-project" style='background-image: url("https://images.unsplash.com/photo-1547949003-9792a18a2601?auto=format&fit=crop&w=1200&q=80");'></div>
                 <div>
-                  <p class="text-[#0d171b] text-base font-medium leading-normal project-title">Volant pour simulation 3D</p>
-                  <p class="text-[#4c809a] text-sm font-normal leading-normal project-desc">Programmation d'un volant pour le pilotage en simulateur 3D : gestion des entrées et du retour de force.</p>
+                  <p class="text-[#0d171b] text-base font-medium leading-normal project-title" data-i18n="home.proj.volant.t">3D-simulation wheel</p>
+                  <p class="text-[#4c809a] text-sm font-normal leading-normal project-desc" data-i18n="home.proj.volant.d">Programming a steering wheel for 3D simulator driving: input handling and force feedback.</p>
                 </div>
-              </div>
-
-              <div class="flex flex-col gap-3 pb-3 project-card">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg image-project"
-                  style='background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80");'
-                ></div>
+              </a>
+              <a href="projects.html" class="flex flex-col gap-3 pb-3 project-card">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg image-project" style='background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80");'></div>
                 <div>
-                  <p class="text-[#0d171b] text-base font-medium leading-normal project-title">Projets scolaires</p>
-                  <p class="text-[#4c809a] text-sm font-normal leading-normal project-desc">Travaux réalisés dans le cadre de mes études : programmation, automatisation et systèmes embarqués.</p>
+                  <p class="text-[#0d171b] text-base font-medium leading-normal project-title" data-i18n="home.proj.school.t">School projects</p>
+                  <p class="text-[#4c809a] text-sm font-normal leading-normal project-desc" data-i18n="home.proj.school.d">Work done during my studies: programming, automation and embedded systems.</p>
                 </div>
-              </div>
-
-              <div class="flex flex-col gap-3 pb-3 project-card">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg image-project"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvrvYc0G38gIP611MD34fFaliZWmp_bnYnkntFmVx9NxZTYqf1xFdT2P_7LQiKdQpDbFHkpMHe_raM7d9vIn6wAPLNqU6zC04weZQJBNttmbXdD0SQgf9lOkYXemqD07F5GcM0mf4PkGZiIrCZ4dOMVKmwgDBzG-AtNZYsyh1pZtq3tmcyuwOLwm9ZULKCb6FgZ0w_Nz8lpzIFYZK72KWWb_2NwYhAzqBokwZbIBNZG2bQJw0FQkXO5MXXv4BlqrnNKEHrnbW56lY");'
-                ></div>
+              </a>
+              <a href="projects.html" class="flex flex-col gap-3 pb-3 project-card">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg image-project" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvrvYc0G38gIP611MD34fFaliZWmp_bnYnkntFmVx9NxZTYqf1xFdT2P_7LQiKdQpDbFHkpMHe_raM7d9vIn6wAPLNqU6zC04weZQJBNttmbXdD0SQgf9lOkYXemqD07F5GcM0mf4PkGZiIrCZ4dOMVKmwgDBzG-AtNZYsyh1pZtq3tmcyuwOLwm9ZULKCb6FgZ0w_Nz8lpzIFYZK72KWWb_2NwYhAzqBokwZbIBNZG2bQJw0FQkXO5MXXv4BlqrnNKEHrnbW56lY");'></div>
                 <div>
-                  <p class="text-[#0d171b] text-base font-medium leading-normal project-title">N8N (en pause)</p>
-                  <p class="text-[#4c809a] text-sm font-normal leading-normal project-desc">Automatisation de workflows pour générer des publicités pour des commerces locaux. Projet actuellement à l'arrêt.</p>
+                  <p class="text-[#0d171b] text-base font-medium leading-normal project-title" data-i18n="home.proj.n8n.t">N8N (on hold)</p>
+                  <p class="text-[#4c809a] text-sm font-normal leading-normal project-desc" data-i18n="home.proj.n8n.d">Workflow automation to generate ads for local businesses. Currently on hold.</p>
                 </div>
-              </div>
+              </a>
             </div>
 
-            <!-- Contact Section -->
-            <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contact</h2>
-            <p class="text-[#0d171b] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              Feel free to reach out to me for collaborations or any inquiries. You can connect with me on LinkedIn or send me an email.
+            <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-i18n="home.contact.title">Contact</h2>
+            <p class="text-[#0d171b] text-base font-normal leading-normal pb-3 pt-1 px-4" data-i18n="home.contact.body">
+              Feel free to reach out to me for collaborations or any inquiries. You can connect with me on social media or send me an email.
             </p>
 
-            <!-- Social media Section -->
             <div class="flex justify-stretch">
               <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-start">
                 <a href="https://www.instagram.com/"
@@ -220,7 +162,7 @@
                 </a>
                 <a href="contact.html"
                   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#13a4ec] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] contact-icon">
-                  <span class="truncate">Contact</span>
+                  <span class="truncate" data-i18n="home.contact.button">Contact</span>
                 </a>
               </div>
             </div>
@@ -229,7 +171,7 @@
       </div>
     </div>
     <footer class="bg-[#0d171b] text-white py-6 px-10 text-center border-t border-solid border-t-[#e7eff3]">
-      <p class="text-sm font-normal leading-normal">© 2025 Corentin Vandeput. All rights reserved.</p>
+      <p class="text-sm font-normal leading-normal" data-i18n="footer.rights">© 2025 Corentin Vandeput. All rights reserved.</p>
     </footer>
   </body>
 </html>

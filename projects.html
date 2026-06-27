@@ -2,9 +2,10 @@
 <html lang="en" class="scroll-smooth md:scroll-auto">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" />
-    <title>Developer Portfolio - Projects</title>
+    <title>Corentin Vandeput - Projects</title>
     <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -47,149 +48,13 @@
             <h1 class="text-[#0d171b] text-[32px] font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-5" data-i18n="projp.title">Projects</h1>
             <p class="text-[#4c809a] text-base font-normal leading-normal px-4 pb-4" data-i18n="projp.intro">A selection of my GitHub projects - one card per repository, with the technologies used and visuals from each project.</p>
 
-            <div class="flex flex-col gap-6 p-4">
-
-              <article class="project-row">
-                <div class="carousel" data-carousel aria-roledescription="carousel">
-                  <div class="carousel-track">
-                    <img class="carousel-slide" loading="lazy" src="https://raw.githubusercontent.com/Cvandeput/IpCrypt/main/code/images/pageSplash.png" alt="IpCrypt - splash screen" />
-                    <img class="carousel-slide" loading="lazy" src="https://raw.githubusercontent.com/Cvandeput/IpCrypt/main/code/images/pageConnexion.png" alt="IpCrypt - login" />
-                    <img class="carousel-slide" loading="lazy" src="https://raw.githubusercontent.com/Cvandeput/IpCrypt/main/code/images/pageMenu.png" alt="IpCrypt - menu" />
-                    <img class="carousel-slide" loading="lazy" src="https://raw.githubusercontent.com/Cvandeput/IpCrypt/main/code/images/pageIpVerification.png" alt="IpCrypt - IP verification" />
-                    <img class="carousel-slide" loading="lazy" src="https://raw.githubusercontent.com/Cvandeput/IpCrypt/main/code/images/pageAssociationIp.png" alt="IpCrypt - IP association" />
-                    <img class="carousel-slide" loading="lazy" src="https://raw.githubusercontent.com/Cvandeput/IpCrypt/main/code/images/pageTableauCIDR.png" alt="IpCrypt - CIDR table" />
-                  </div>
-                  <button class="carousel-btn carousel-prev" type="button" aria-label="Previous image">&#8249;</button>
-                  <button class="carousel-btn carousel-next" type="button" aria-label="Next image">&#8250;</button>
-                  <div class="carousel-dots" aria-hidden="true"></div>
-                </div>
-                <div class="project-info">
-                  <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em]">IpCrypt</h2>
-                  <div class="project-badges">
-                    <span class="lang-badge lang-badge-accent">Python</span>
-                    <span class="lang-badge">CustomTkinter</span>
-                    <span class="lang-badge">PostgreSQL</span>
-                  </div>
-                  <p class="text-[#4c809a] text-sm font-normal leading-normal" data-i18n="projd.ipcrypt">Desktop network toolkit (BAC2): class detection, subnet calculation, cross-network visibility and a CIDR table - all the network logic hand-coded, no library. Accounts and passwords hashed (Argon2) in a PostgreSQL database.</p>
-                  <a class="project-link" href="https://github.com/Cvandeput/IpCrypt" target="_blank" rel="noopener" data-i18n="projp.view_github">View on GitHub &#8599;</a>
-                </div>
-              </article>
-
-              <article class="project-row">
-                <div class="carousel" data-carousel aria-roledescription="carousel">
-                  <div class="carousel-track">
-                    <img class="carousel-slide" loading="lazy" src="https://raw.githubusercontent.com/Cvandeput/TOTEM-TRIALS/master/docs/assets/banner.png" alt="Totem Trials - banner" />
-                    <img class="carousel-slide" loading="lazy" src="https://raw.githubusercontent.com/Cvandeput/TOTEM-TRIALS/master/docs/assets/plateau-jeu-javaFX.png" alt="Totem Trials - JavaFX board" />
-                    <img class="carousel-slide" loading="lazy" src="https://raw.githubusercontent.com/Cvandeput/TOTEM-TRIALS/master/docs/assets/Prototypeplateau.png" alt="Totem Trials - board prototype" />
-                  </div>
-                  <button class="carousel-btn carousel-prev" type="button" aria-label="Previous image">&#8249;</button>
-                  <button class="carousel-btn carousel-next" type="button" aria-label="Next image">&#8250;</button>
-                  <div class="carousel-dots" aria-hidden="true"></div>
-                </div>
-                <div class="project-info">
-                  <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em]">Totem Trials</h2>
-                  <div class="project-badges">
-                    <span class="lang-badge lang-badge-accent">Java</span>
-                    <span class="lang-badge">JavaFX</span>
-                    <span class="lang-badge">Maven</span>
-                    <span class="lang-badge">JUnit</span>
-                  </div>
-                  <p class="text-[#4c809a] text-sm font-normal leading-normal" data-i18n="projd.totem">Multiplayer trivia board game (2-4 players) set in the Jumanji universe, a Java integration project at HELHa. MVC architecture, State pattern, a 42-tile pixel-art board, characters with abilities and questions loaded from JSON.</p>
-                  <a class="project-link" href="https://github.com/Cvandeput/TOTEM-TRIALS" target="_blank" rel="noopener" data-i18n="projp.view_github">View on GitHub &#8599;</a>
-                </div>
-              </article>
-
-              <article class="project-row">
-                <div class="carousel" data-carousel aria-roledescription="carousel">
-                  <div class="carousel-track">
-                    <img class="carousel-slide" loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Space Mouse - placeholder" />
-                  </div>
-                  <button class="carousel-btn carousel-prev" type="button" aria-label="Previous image">&#8249;</button>
-                  <button class="carousel-btn carousel-next" type="button" aria-label="Next image">&#8250;</button>
-                  <div class="carousel-dots" aria-hidden="true"></div>
-                </div>
-                <div class="project-info">
-                  <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em]">Space Mouse</h2>
-                  <div class="project-badges">
-                    <span class="lang-badge lang-badge-accent">C++</span>
-                    <span class="lang-badge">Arduino</span>
-                  </div>
-                  <p class="text-[#4c809a] text-sm font-normal leading-normal" data-i18n="projd.spacemouse">DIY Space Mouse based on an Arduino Nano 32u4 and an analog joystick, to drive 3D navigation in Fusion 360 (USB HID mouse emulation). Custom PCB (DXF) and 3D-printed enclosure included.</p>
-                  <a class="project-link" href="https://github.com/Cvandeput/SpaceMouse" target="_blank" rel="noopener" data-i18n="projp.view_github">View on GitHub &#8599;</a>
-                </div>
-              </article>
-
-              <article class="project-row">
-                <div class="carousel" data-carousel aria-roledescription="carousel">
-                  <div class="carousel-track">
-                    <img class="carousel-slide" loading="lazy" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80" alt="Ad generator - placeholder" />
-                  </div>
-                  <button class="carousel-btn carousel-prev" type="button" aria-label="Previous image">&#8249;</button>
-                  <button class="carousel-btn carousel-next" type="button" aria-label="Next image">&#8250;</button>
-                  <div class="carousel-dots" aria-hidden="true"></div>
-                </div>
-                <div class="project-info">
-                  <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em]">Ad Generator (N8N) <span class="text-[#4c809a] text-sm font-normal" data-i18n="projp.onhold">(on hold)</span></h2>
-                  <div class="project-badges">
-                    <span class="lang-badge lang-badge-accent">N8N</span>
-                    <span class="lang-badge">JavaScript</span>
-                    <span class="lang-badge">Ollama</span>
-                    <span class="lang-badge">HTML</span>
-                  </div>
-                  <p class="text-[#4c809a] text-sm font-normal leading-normal" data-i18n="projd.adgen">Automatic ad generation from product photos: web upload, local AI analysis (Ollama), visual generation and email delivery - a 100% automated workflow with N8N.</p>
-                  <a class="project-link" href="https://github.com/Cvandeput/ad-generator" target="_blank" rel="noopener" data-i18n="projp.view_github">View on GitHub &#8599;</a>
-                </div>
-              </article>
-
-              <article class="project-row">
-                <div class="carousel" data-carousel aria-roledescription="carousel">
-                  <div class="carousel-track">
-                    <img class="carousel-slide" loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Gestion XML - placeholder" />
-                  </div>
-                  <button class="carousel-btn carousel-prev" type="button" aria-label="Previous image">&#8249;</button>
-                  <button class="carousel-btn carousel-next" type="button" aria-label="Next image">&#8250;</button>
-                  <div class="carousel-dots" aria-hidden="true"></div>
-                </div>
-                <div class="project-info">
-                  <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em]">Gestion XML</h2>
-                  <div class="project-badges">
-                    <span class="lang-badge lang-badge-accent">PHP</span>
-                    <span class="lang-badge">XML</span>
-                    <span class="lang-badge">JavaScript</span>
-                    <span class="lang-badge">Tailwind</span>
-                    <span class="lang-badge">VBA</span>
-                  </div>
-                  <p class="text-[#4c809a] text-sm font-normal leading-normal" data-i18n="projd.gestionxml">Web app (Internet Technologies course) to explore Belgian demographic data by year and NIS code. VBA extraction to XML, PHP API (SimpleXML to JSON), dynamic display with filtering and dark mode.</p>
-                  <a class="project-link" href="https://github.com/Cvandeput/gestion-xml" target="_blank" rel="noopener" data-i18n="projp.view_github">View on GitHub &#8599;</a>
-                </div>
-              </article>
-
-              <article class="project-row">
-                <div class="carousel" data-carousel aria-roledescription="carousel">
-                  <div class="carousel-track">
-                    <img class="carousel-slide" loading="lazy" src="https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?auto=format&fit=crop&w=1200&q=80" alt="Zoo-Gestion - placeholder" />
-                  </div>
-                  <button class="carousel-btn carousel-prev" type="button" aria-label="Previous image">&#8249;</button>
-                  <button class="carousel-btn carousel-next" type="button" aria-label="Next image">&#8250;</button>
-                  <div class="carousel-dots" aria-hidden="true"></div>
-                </div>
-                <div class="project-info">
-                  <h2 class="text-[#0d171b] text-[22px] font-bold leading-tight tracking-[-0.015em]">Zoo-Gestion</h2>
-                  <div class="project-badges">
-                    <span class="lang-badge lang-badge-accent">C</span>
-                  </div>
-                  <p class="text-[#4c809a] text-sm font-normal leading-normal" data-i18n="projd.zoo">Console application in C for full zoo management: an admin area (animals, guided tours, pricing) and a customer area (ticketing, bookings, invoicing). Linked lists and persistence in .dat files.</p>
-                  <a class="project-link" href="https://github.com/Cvandeput/Zoo-Gestion" target="_blank" rel="noopener" data-i18n="projp.view_github">View on GitHub &#8599;</a>
-                </div>
-              </article>
-
-            </div>
+            <div id="projects-list" class="flex flex-col gap-6 p-4"></div>
           </div>
         </div>
       </div>
     </div>
     <footer class="bg-[#0d171b] text-white py-6 px-10 text-center border-t border-solid border-t-[#e7eff3]">
-      <p class="text-sm font-normal leading-normal">© 2025 Corentin Vandeput. All rights reserved.</p>
+      <p class="text-sm font-normal leading-normal" data-i18n="footer.rights">© 2025 Corentin Vandeput. All rights reserved.</p>
     </footer>
   </body>
 </html>

@@ -30,4 +30,5 @@
     apply(getLang());
   });
   window.__getLang = getLang;
+  window.__applyI18n = apply;
 })();
