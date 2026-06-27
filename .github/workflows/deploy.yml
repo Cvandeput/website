@@ -52,4 +52,5 @@ jobs:
           timeout: 60s
           script: |
             cd ${{ secrets.VPS_PATH }}
-            git pull origin main
+            git fetch origin main
+            git reset --hard origin/main
